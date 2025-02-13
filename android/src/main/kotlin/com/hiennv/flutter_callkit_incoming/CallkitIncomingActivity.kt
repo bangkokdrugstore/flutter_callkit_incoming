@@ -72,15 +72,11 @@ class CallkitIncomingActivity : Activity() {
 
     private lateinit var tvNameCaller: TextView
     private lateinit var tvAppName: TextView
-//    private lateinit var ivLogo: ImageView
     private lateinit var ivAvatar: CircleImageView
-
     private lateinit var llAction: LinearLayout
     private lateinit var ivAcceptCall: ImageView
-    private lateinit var tvAccept: TextView
-
     private lateinit var ivDeclineCall: ImageView
-    private lateinit var tvDecline: TextView
+
 
     @Suppress("DEPRECATION")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -191,13 +187,7 @@ class CallkitIncomingActivity : Activity() {
         }
         val duration = data?.getLong(CallkitConstants.EXTRA_CALLKIT_DURATION, 0L) ?: 0L
         wakeLockRequest(duration)
-
         finishTimeout(data, duration)
-
-        val textAccept = data?.getString(CallkitConstants.EXTRA_CALLKIT_TEXT_ACCEPT, "")
-        tvAccept.text = if (TextUtils.isEmpty(textAccept)) getString(R.string.text_accept) else textAccept
-        val textDecline = data?.getString(CallkitConstants.EXTRA_CALLKIT_TEXT_DECLINE, "")
-        tvDecline.text = if (TextUtils.isEmpty(textDecline)) getString(R.string.text_decline) else textDecline
     }
 
     private fun finishTimeout(data: Bundle?, duration: Long) {
@@ -219,17 +209,13 @@ class CallkitIncomingActivity : Activity() {
         tvNameCaller = findViewById(R.id.tvNameCaller)
         tvAppName = findViewById(R.id.tvAppName)
         ivAvatar = findViewById(R.id.ivAvatar)
-
         llAction = findViewById(R.id.llAction)
 
         val params = llAction.layoutParams as MarginLayoutParams
         params.setMargins(0, 0, 0, Utils.getNavigationBarHeight(this@CallkitIncomingActivity))
         llAction.layoutParams = params
-
         ivAcceptCall = findViewById(R.id.ivAcceptCall)
-        tvAccept = findViewById(R.id.tvAccept)
         ivDeclineCall = findViewById(R.id.ivDeclineCall)
-        tvDecline = findViewById(R.id.tvDecline)
         animateAcceptCall()
 
         ivAcceptCall.setOnClickListener {

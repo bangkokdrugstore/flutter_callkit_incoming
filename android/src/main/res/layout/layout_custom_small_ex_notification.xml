@@ -80,20 +80,6 @@
                     android:tint="@android:color/white"
                     app:tint="@android:color/white"
                     tools:ignore="UseAppTint" />
-
-                <TextView
-                    android:id="@+id/tvDecline"
-                    style="@style/Widget.Compat.NotificationActionText"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/base_margin_half"
-                    android:layout_marginRight="@dimen/base_margin_half"
-                    android:visibility="gone"
-                    android:gravity="center"
-                    android:text="@string/text_decline"
-                    android:textAllCaps="false"
-                    android:textColor="@color/action_text" />
-
             </LinearLayout>
 
             <LinearLayout
@@ -119,19 +105,6 @@
                     android:tint="@android:color/white"
                     app:tint="@android:color/white"
                     tools:ignore="UseAppTint" />
-
-                <TextView
-                    android:id="@+id/tvAccept"
-                    style="@style/Widget.Compat.NotificationActionText"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/base_margin_half"
-                    android:layout_marginRight="@dimen/base_margin_half"
-                    android:gravity="center"
-                    android:text="@string/text_accept"
-                    android:visibility="gone"
-                    android:textAllCaps="false"
-                    android:textColor="@color/action_text" />
 
             </LinearLayout>
 
