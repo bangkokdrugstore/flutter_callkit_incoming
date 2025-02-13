@@ -137,7 +137,7 @@ class HomePageState extends State<HomePage> {
         nameCaller: 'มีสายเข้าเรียกเข้าจากเภสัชกร',
         appName: 'ร้านยากรุงเทพ',
         avatar: 'http',
-        handle: '0123456789',
+        handle: 'ร้านยากรุงเทพ',
         type: 0,
         duration: 30000,
         textAccept: 'Accept',

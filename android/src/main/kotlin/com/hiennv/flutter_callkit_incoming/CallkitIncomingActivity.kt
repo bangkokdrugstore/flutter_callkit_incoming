@@ -174,7 +174,6 @@ class CallkitIncomingActivity : Activity() {
         }
 
         tvNameCaller.text = data?.getString(CallkitConstants.EXTRA_CALLKIT_NAME_CALLER, "")
-        tvAppName.text = data?.getString(CallkitConstants.EXTRA_CALLKIT_HANDLE, "")
 
         val avatarUrl = data?.getString(CallkitConstants.EXTRA_CALLKIT_AVATAR, "")
         if (avatarUrl != null) {
