@@ -218,7 +218,7 @@ class CallkitIncomingActivity : Activity() {
     private fun initView() {
         ivBackground = findViewById(R.id.ivBackground)
         tvNameCaller = findViewById(R.id.tvNameCaller)
-        tvAppName = findViewById(R.id.tvNumber)
+        tvAppName = findViewById(R.id.tvAppName)
         ivAvatar = findViewById(R.id.ivAvatar)
 
         llAction = findViewById(R.id.llAction)
