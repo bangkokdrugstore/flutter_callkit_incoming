@@ -207,14 +207,14 @@ class CallkitNotificationManager(private val context: Context) {
                 val textDecline = data.getString(CallkitConstants.EXTRA_CALLKIT_TEXT_DECLINE, "")
                 val declineAction: NotificationCompat.Action = NotificationCompat.Action.Builder(
                     R.drawable.ic_decline,
-                    if (TextUtils.isEmpty(textDecline)) context.getString(R.string.text_decline) else textDecline,
+                    textDecline,
                     getDeclinePendingIntent(notificationId, data)
                 ).build()
                 notificationBuilder.addAction(declineAction)
                 val textAccept = data.getString(CallkitConstants.EXTRA_CALLKIT_TEXT_ACCEPT, "")
                 val acceptAction: NotificationCompat.Action = NotificationCompat.Action.Builder(
                     R.drawable.ic_accept,
-                    if (TextUtils.isEmpty(textDecline)) context.getString(R.string.text_accept) else textAccept,
+                    textAccept,
                     getAcceptPendingIntent(notificationId, data)
                 ).build()
                 notificationBuilder.addAction(acceptAction)
@@ -241,19 +241,9 @@ class CallkitNotificationManager(private val context: Context) {
             R.id.llDecline,
             getDeclinePendingIntent(notificationId, data)
         )
-        val textDecline = data.getString(CallkitConstants.EXTRA_CALLKIT_TEXT_DECLINE, "")
-        remoteViews.setTextViewText(
-            R.id.tvDecline,
-            if (TextUtils.isEmpty(textDecline)) context.getString(R.string.text_decline) else textDecline
-        )
         remoteViews.setOnClickPendingIntent(
             R.id.llAccept,
             getAcceptPendingIntent(notificationId, data)
-        )
-        val textAccept = data.getString(CallkitConstants.EXTRA_CALLKIT_TEXT_ACCEPT, "")
-        remoteViews.setTextViewText(
-            R.id.tvAccept,
-            if (TextUtils.isEmpty(textAccept)) context.getString(R.string.text_accept) else textAccept
         )
         val avatarUrl = data.getString(CallkitConstants.EXTRA_CALLKIT_AVATAR, "")
         if (avatarUrl != null && avatarUrl.isNotEmpty()) {
