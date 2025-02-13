@@ -1,7 +1,6 @@
 package com.hiennv.flutter_callkit_incoming
 
 import android.app.Activity
-import android.app.ActivityManager
 import android.app.KeyguardManager
 import android.content.BroadcastReceiver
 import android.content.Context
@@ -20,7 +19,6 @@ import android.view.animation.AnimationUtils
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
-import com.hiennv.flutter_callkit_incoming.widgets.RippleRelativeLayout
 import com.squareup.picasso.Picasso
 import de.hdodenhof.circleimageview.CircleImageView
 import kotlin.math.abs
@@ -28,8 +26,6 @@ import okhttp3.OkHttpClient
 import com.squareup.picasso.OkHttp3Downloader
 import android.view.ViewGroup.MarginLayoutParams
 import android.os.PowerManager
-import android.text.TextUtils
-import android.util.Log
 
 
 class CallkitIncomingActivity : Activity() {
@@ -71,7 +67,7 @@ class CallkitIncomingActivity : Activity() {
 //    private lateinit var llBackgroundAnimation: RippleRelativeLayout
 
     private lateinit var tvNameCaller: TextView
-    private lateinit var tvAppName: TextView
+    private lateinit var tvNumber: TextView
     private lateinit var ivAvatar: CircleImageView
     private lateinit var llAction: LinearLayout
     private lateinit var ivAcceptCall: ImageView
@@ -170,9 +166,10 @@ class CallkitIncomingActivity : Activity() {
         }
 
         tvNameCaller.text = data?.getString(CallkitConstants.EXTRA_CALLKIT_NAME_CALLER, "")
+        tvNumber.text = data?.getString(CallkitConstants.EXTRA_CALLKIT_HANDLE, "")
 
         val avatarUrl = data?.getString(CallkitConstants.EXTRA_CALLKIT_AVATAR, "")
-        if (avatarUrl != null) {
+        if (avatarUrl != null && avatarUrl.isNotEmpty()) {
             val headers = data.getSerializable(CallkitConstants.EXTRA_CALLKIT_HEADERS) as HashMap<String, Any?>
             getPicassoInstance(this@CallkitIncomingActivity, headers)
                     .load(avatarUrl)
@@ -206,8 +203,8 @@ class CallkitIncomingActivity : Activity() {
 
     private fun initView() {
         ivBackground = findViewById(R.id.ivBackground)
-        tvNameCaller = findViewById(R.id.tvNameCaller)
-        tvAppName = findViewById(R.id.tvAppName)
+        tvNameCaller = findViewById(R.id.tvCallerName)
+        tvNumber = findViewById(R.id.tvNumber)
         ivAvatar = findViewById(R.id.ivAvatar)
         llAction = findViewById(R.id.llAction)
 

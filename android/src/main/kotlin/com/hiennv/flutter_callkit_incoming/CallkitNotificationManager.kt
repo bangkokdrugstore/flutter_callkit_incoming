@@ -227,7 +227,7 @@ class CallkitNotificationManager(private val context: Context) {
 
     private fun initNotificationViews(remoteViews: RemoteViews, data: Bundle) {
         remoteViews.setTextViewText(
-            R.id.tvNameCaller,
+            R.id.tvCallerName,
             data.getString(CallkitConstants.EXTRA_CALLKIT_NAME_CALLER, "")
         )
         val isShowCallID = data?.getBoolean(CallkitConstants.EXTRA_CALLKIT_IS_SHOW_CALL_ID, false)
@@ -301,7 +301,7 @@ class CallkitNotificationManager(private val context: Context) {
             notificationViews =
                 RemoteViews(context.packageName, R.layout.layout_custom_miss_notification)
             notificationViews?.setTextViewText(
-                R.id.tvNameCaller,
+                R.id.tvCallerName,
                 data.getString(CallkitConstants.EXTRA_CALLKIT_NAME_CALLER, "")
             )
             val isShowCallID =

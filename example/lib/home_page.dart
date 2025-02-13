@@ -135,8 +135,8 @@ class HomePageState extends State<HomePage> {
       final params = CallKitParams(
         id: _currentUuid,
         nameCaller: 'มีสายเข้าเรียกเข้าจากเภสัชกร',
-        appName: 'ร้านยากรุงเทพ',
-        avatar: 'http',
+        appName: 'BDS',
+        avatar: '',
         handle: 'ร้านยากรุงเทพ',
         type: 0,
         duration: 30000,
@@ -160,8 +160,8 @@ class HomePageState extends State<HomePage> {
           textColor: '#ffffff',
           incomingCallNotificationChannelName: 'Incoming Call',
           missedCallNotificationChannelName: 'Missed Call',
-          isImportant: true,
-          isBot: false,
+          // isImportant: true,
+          // isBot: false,
         ),
         ios: const IOSParams(
           iconName: 'CallKitLogo',

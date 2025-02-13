@@ -47,7 +47,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/tvNameCaller"
+            android:id="@+id/tvCallerName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
@@ -59,7 +59,7 @@
             android:textSize="@dimen/size_text_name"
             app:autoSizeMaxTextSize="@dimen/size_text_name"
             app:autoSizeMinTextSize="12sp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/tvNumber"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/ivAvatar"
@@ -67,17 +67,17 @@
             tools:text="มีสายเข้าเรียกเข้าจากเภสัชกร" />
 
         <TextView
-            android:id="@+id/tvAppName"
+            android:id="@+id/tvNumber"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:fontFamily="@font/prompt_semi_bold"
             android:gravity="center"
             android:textColor="#FFFFFF"
             android:textSize="18sp"
+            app:layout_constraintTop_toBottomOf="@id/tvCallerName"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvNameCaller"
             tools:text="ร้านยากรุงเทพ" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
