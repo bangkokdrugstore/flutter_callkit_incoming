@@ -134,9 +134,9 @@ class HomePageState extends State<HomePage> {
 
       final params = CallKitParams(
         id: _currentUuid,
-        nameCaller: 'Hien Nguyen',
-        appName: 'Callkit',
-        avatar: 'https://i.pravatar.cc/100',
+        nameCaller: 'มีสายเข้าเรียกเข้าจากเภสัชกร',
+        appName: 'ร้านยากรุงเทพ',
+        avatar: 'http',
         handle: '0123456789',
         type: 0,
         duration: 30000,
